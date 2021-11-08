@@ -17,11 +17,11 @@ Create GCE Instance CentOS7 with MySQL
 * cd GCE_Instance_MySQL
 
 ***NOTE***
-To run the playbook first of all, you'll need to proceed some changes in the MySQL_Instance_GCE.yaml file:
+To run the playbook first of all, you'll need to proceed some changes in the MySQL_Instance_GCE.yaml and gcp_compute_plugin.gcp.yaml files:
 1. Add a new key to your Service Acount on gcp as json format and download it to the project directory, 
-   then add the name of this file to gcp_cred_file var, otherwise you'll not be accepted to communicate with gcp via ansible.
-3. Add the project ID from gcp to gcp_project var
-4. Select your region to gcp_region var, and zone to gcp_zone
+   then add the path of this file as a GCP Credential file, otherwise you'll not be accepted to communicate with GCP via ansible.
+3. Add the project ID from GCP
+4. Add your region and zone
 
 # Login to GCP via gcloud SDK
 
