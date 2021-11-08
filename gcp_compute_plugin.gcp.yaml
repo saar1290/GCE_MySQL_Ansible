@@ -1,5 +1,5 @@
 plugin: gcp_compute
 projects:
-  - molten-infusion-331118
+  - "PROJECT_ID"
 auth_kind: serviceaccount
-service_account_file: ./molten-infusion-331118-5efaf8ca3231.json
+service_account_file: "PATH_TO_CREDENTIAL_FILE"
