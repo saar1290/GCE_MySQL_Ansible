@@ -1,1 +1,1 @@
-gcloud compute project-info add-metadata --metadata ssh-keys=$(whoami):"$(cat /home/saar/.ssh/id_rsa.pub)"
+gcloud compute project-info add-metadata --metadata ssh-keys=$(whoami):"$(cat $HOME/.ssh/id_rsa.pub)"
