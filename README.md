@@ -23,7 +23,7 @@ To run the playbook first of all, you'll need to proceed some changes in the MyS
 3. Add the project ID from gcp to gcp_project var
 4. Select your region to gcp_region var, and zone to gcp_zone
 
-# Login to GCP via gcluod SDK
+# Login to GCP via gcloud SDK
 
 * gcloud auth application-default login
 
