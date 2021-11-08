@@ -1,0 +1,5 @@
+plugin: gcp_compute
+projects:
+  - molten-infusion-331118
+auth_kind: serviceaccount
+service_account_file: ./molten-infusion-331118-5efaf8ca3231.json

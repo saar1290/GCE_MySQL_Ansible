@@ -32,6 +32,16 @@ To run the playbook first of all, you'll need to proceed some changes in the MyS
 * ssh-keygen
 * ./gen_ssh_to_gcp.sh
 
+# Configure Ansible inventory
+
+## Add this line to /etc/ansible/ansible.cfg below [inventory] block
+
+* enable_plugins = gcp_compute
+
+## Install GCP Collection to ansible
+
+* ansible-galaxy collection install google.cloud
+
 # Run the playbook
 
 * ansible-playbook MySQL_Instance_GCE.yaml

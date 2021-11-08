@@ -1,0 +1,1 @@
+gcloud compute project-info add-metadata --metadata ssh-keys=saar:"$(cat /home/saar/.ssh/id_rsa.pub)"
