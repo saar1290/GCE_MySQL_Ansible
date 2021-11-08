@@ -42,6 +42,10 @@ To run the playbook first of all, you'll need to proceed some changes in the MyS
 
 * ansible-galaxy collection install google.cloud
 
+### Enable the GCP_Compute plugin
+
+* ansible-inventory --list -i gcp_compute_plugin.gcp.yaml
+
 # Run the playbook
 
 * ansible-playbook MySQL_Instance_GCE.yaml
