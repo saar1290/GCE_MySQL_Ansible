@@ -3,11 +3,11 @@
   gather_facts: no
 
   vars:
-    gcp_project: "PROJECT_ID"
-    gcp_cred_file: "PATH_TO_CREDENTIAL_FILE"
+    gcp_project: "molten-infusion-331118"
+    gcp_cred_file: ./molten-infusion-331118-5efaf8ca3231.json
     gcp_cred_kind: "serviceaccount"
-    gcp_region: "REGION"
-    gcp_zone: "ZONE"
+    gcp_region: "europe-west1"
+    gcp_zone: "b"
     scopes:
       - https://www.googleapis.com/auth/compute
   
@@ -68,10 +68,15 @@
     - name: Add host to groupname
       add_host: hostname={{ address.address }} groupname=mysql_server
 
+    - name: Show IP Address Of MySQL Server
+      set_fact:
+        ansible_ssh_host: "{{ address.address }}"
+    - debug:
+        msg: "ssh $USER@{{ ansible_ssh_host }}"
+    
 - name: MySQL
   hosts: mysql_server
   connection: ssh
   become: True
-  gather_facts: no
   roles:
     - install_packages
