@@ -53,6 +53,6 @@ To run the playbook first of all, you'll need to do some changes in those files:
 
 # Run the playbook
 
-* ansible-playbook MySQL_Instance_GCE.yaml
+* ansible-playbook MySQL_GCE_Instance.yaml
 
 ## The CentOS7 Instance will created after the playbook finished with MySQL-server ;-)
