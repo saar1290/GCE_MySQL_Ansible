@@ -3,11 +3,11 @@
   gather_facts: no
 
   vars:
-    gcp_project: "molten-infusion-331118"
-    gcp_cred_file: ./molten-infusion-331118-5efaf8ca3231.json
+    gcp_project: "PROJECT_ID"
+    gcp_cred_file: "PATH_TO_CREDENTIAL_FILE"
     gcp_cred_kind: "serviceaccount"
-    gcp_region: "europe-west1"
-    gcp_zone: "b"
+    gcp_region: "REGION"
+    gcp_zone: "ZONE"
     scopes:
       - https://www.googleapis.com/auth/compute
   
@@ -42,7 +42,11 @@
         disks:
           - boot: 'true'
             source: "{{ disk }}"
-            type: PERSISTENT   
+            type: PERSISTENT
+        metadata:
+          startup-script: 
+            {'yum install https://dev.mysql.com/get/mysql80-community-release-el7-3.noarch.rpm -y 
+            && yum install mysql-server -y'}
         labels:
           environment: production
         network_interfaces:
@@ -73,10 +77,3 @@
         ansible_ssh_host: "{{ address.address }}"
     - debug:
         msg: "ssh $USER@{{ ansible_ssh_host }}"
-    
-- name: MySQL
-  hosts: mysql_server
-  connection: ssh
-  become: True
-  roles:
-    - install_packages
