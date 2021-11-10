@@ -43,10 +43,6 @@
           - boot: 'true'
             source: "{{ disk }}"
             type: PERSISTENT
-        metadata:
-          startup-script: 
-            {'yum install https://dev.mysql.com/get/mysql80-community-release-el7-3.noarch.rpm -y 
-            && yum install mysql-server -y'}
         labels:
           environment: production
         network_interfaces:
@@ -77,3 +73,10 @@
         ansible_ssh_host: "{{ address.address }}"
     - debug:
         msg: "ssh $USER@{{ ansible_ssh_host }}"
+
+- name: MySQL
+  hosts: mysql_server
+  connection: ssh
+  become: True
+  roles:
+    - install_packages
