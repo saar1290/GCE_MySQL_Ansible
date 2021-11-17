@@ -1,4 +1,4 @@
-# GCE_Instance_MySQL
+# GCE_MySQL_Ansible
 Create GCE Instance CentOS7 with MySQL
 
 # Pre-Requirements
@@ -14,18 +14,18 @@ Create GCE Instance CentOS7 with MySQL
 ## When all the tools above are installed, clone this project to your local machine and run those commands in your shell:
 
 ### Change dir to the project dir
-* cd GCE_Instance_MySQL
+* cd GCE_MySQL_Ansible
 
 ***NOTE***
 
 To run the playbook first of all, you'll need to do some changes in those files:
 
-* MySQL_Instance_GCE.yaml 
+* Deploy_GCE_MySQL.yaml 
 * gcp_compute_plugin.gcp.yaml
 
 1. Add a new key to your "Compute Engine default service account" on gcp as json format and download it to the project directory, 
-   then add the path of this file as a GCP Credential file, otherwise you'll not be accepted to communicate with GCP via ansible.
-3. Add the project ID from GCP
+   then add the path of this file insted of "PATH_TO_CREDENTIAL_FILE", otherwise you'll not be accepted to communicate with GCP via ansible.
+3. Add your project ID from GCP
 4. Add your region and zone
 
 # Login to GCP via gcloud SDK
@@ -53,6 +53,6 @@ To run the playbook first of all, you'll need to do some changes in those files:
 
 # Run the playbook
 
-* ansible-playbook MySQL_GCE_Instance.yaml
+* ansible-playbook Deploy_GCE_MySQL.yaml
 
 ## The CentOS7 Instance will created after the playbook finished with MySQL-server ;-)
